@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - CLB Văn Nghệ</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .message-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    .message-table th, .message-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    .message-table th {
+      background-color: #1e3a8a;
+      color: white;
+    }
+    
+    .message-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Admin - CLB Văn Nghệ Đoàn Trường Cao Đẳng Hàng Hải I</h1>
+  </header>
+
+  <main class="admin-container">
+    <h2>Danh sách tin nhắn</h2>
+    <table class="message-table">
+      <thead>
+        <tr>
+          <th>Thời gian</th>
+          <th>Họ và tên</th>
+          <th>Email</th>
+          <th>Tin nhắn</th>
+        </tr>
+      </thead>
+      <tbody id="message-list">
+        <!-- Messages will be loaded here -->
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 CLB Văn Nghệ Đoàn Trường Cao Đẳng Hàng Hải I. Tất cả các quyền được bảo lưu.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fetch messages
+      fetch('/admin/messages')
+        .then(response => response.json())
+        .then(messages => {
+          const messageList = document.getElementById('message-list');
+          
+          if (messages.length === 0) {
+            messageList.innerHTML = '<tr><td colspan="4" style="text-align: center;">Không có tin nhắn nào</td></tr>';
+            return;
+          }
+          
+          // Sort messages by date (newest first)
+          messages.sort((a, b) => new Date(b.date) - new Date(a.date));
+          
+          // Add each message to the table
+          messages.forEach(msg => {
+            const row = document.createElement('tr');
+            
+            const dateCell = document.createElement('td');
+            const date = new Date(msg.date);
+            dateCell.textContent = date.toLocaleString('vi-VN');
+            
+            const nameCell = document.createElement('td');
+            nameCell.textContent = msg.name;
+            
+            const emailCell = document.createElement('td');
+            emailCell.textContent = msg.email;
+            
+            const messageCell = document.createElement('td');
+            messageCell.textContent = msg.message;
+            
+            row.appendChild(dateCell);
+            row.appendChild(nameCell);
+            row.appendChild(emailCell);
+            row.appendChild(messageCell);
+            
+            messageList.appendChild(row);
+          });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('message-list').innerHTML = 
+            '<tr><td colspan="4" style="text-align: center; color: red;">Lỗi khi tải tin nhắn</td></tr>';
+        });
+    });
+  </script>
+</body>
+</html>

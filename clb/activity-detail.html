@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết hoạt động - CLB Văn Nghệ Đoàn Trường Cao Đẳng Hàng Hải I</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gallery-style.css">
+  <style>
+    .activity-detail-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .activity-hero {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    
+    .activity-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      color: #666;
+    }
+    
+    .activity-description {
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .activity-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .activity-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .activity-gallery img:hover {
+      transform: scale(1.03);
+    }
+    
+    .related-activities {
+      margin-top: 3rem;
+    }
+    
+    .related-activities h3 {
+      margin-bottom: 1.5rem;
+      color: #1e3a8a;
+    }
+    
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chi tiết hoạt động - CLB Văn Nghệ Đoàn Trường Cao Đẳng Hàng Hải I</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="index.html#activities">Quay lại hoạt động</a></li>
+        <li><a href="gallery.html">Thư viện ảnh</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="activity-detail-container">
+      <h2 id="activity-title">Tên hoạt động</h2>
+      
+      <img src="https://via.placeholder.com/1000x600" alt="Ảnh hoạt động" class="activity-hero">
+      
+      <div class="activity-meta">
+        <span class="activity-date">Ngày diễn ra: <span id="activity-date">DD/MM/YYYY</span></span>
+        <span class="activity-location">Địa điểm: <span id="activity-location">Trường CĐHH1</span></span>
+      </div>
+      
+      <div class="activity-description">
+        <h3>Mô tả chi tiết</h3>
+        <p>Đây là mô tả chi tiết về hoạt động của CLB. Bạn có thể thay đổi nội dung này bằng cách chỉnh sửa file HTML. Mô tả này nên cung cấp thông tin đầy đủ về mục đích, nội dung và kết quả của hoạt động.</p>
+        <p>Việc tổ chức các hoạt động văn nghệ không chỉ giúp sinh viên phát triển năng khiếu mà còn tạo sân chơi lành mạnh, thúc đẩy tinh thần đoàn kết và gắn bó giữa các thành viên trong trường.</p>
+      </div>
+      
+      <div class="activity-gallery-section">
+        <h3>Hình ảnh hoạt động</h3>
+        <div class="activity-gallery">
+          <img src="https://via.placeholder.com/800x600" alt="Hoạt động 1">
+          <img src="https://via.placeholder.com/800x600" alt="Hoạt động 2">
+          <img src="https://via.placeholder.com/800x600" alt="Hoạt động 3">
+          <img src="https://via.placeholder.com/800x600" alt="Hoạt động 4">
+          <img src="https://via.placeholder.com/800x600" alt="Hoạt động 5">
+          <img src="https://via.placeholder.com/800x600" alt="Hoạt động 6">
+          <img src="https://via.placeholder.com/800x600" alt="Hoạt động 7">
+          <img src="https://via.placeholder.com/800x600" alt="Hoạt động 8">
+        </div>
+      </div>
+      
+      <div class="related-activities">
+        <h3>Các hoạt động liên quan</h3>
+        <div class="related-grid">
+          <div class="activity-card">
+            <h3>Biểu diễn văn nghệ</h3>
+            <p>Tổ chức các buổi biểu diễn văn nghệ định kỳ vào các dịp lễ lớn.</p>
+            <a href="gallery-events.html" class="btn small-btn">Xem thêm</a>
+          </div>
+          <div class="activity-card">
+            <h3>Tập luyện</h3>
+            <p>Lịch tập luyện hàng tuần với sự hướng dẫn của các giáo viên.</p>
+            <a href="gallery-practice.html" class="btn small-btn">Xem thêm</a>
+          </div>
+          <div class="activity-card">
+            <h3>Giao lưu</h3>
+            <p>Tham gia các hoạt động giao lưu với các CLB văn nghệ khác.</p>
+            <a href="gallery-exchange.html" class="btn small-btn">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 CLB Văn Nghệ Đoàn Trường Cao Đẳng Hàng Hải I. Tất cả các quyền được bảo lưu.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Script để động nạp nội dung hoạt động từ URL parameters (có thể phát triển sau)
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lấy query parameters từ URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const activityId = urlParams.get('id');
+      
+      // Trong thực tế, bạn sẽ tải dữ liệu từ server dựa vào ID
+      // Đây là ví dụ đơn giản
+      if (activityId) {
+        // Có thể phát triển tính năng nạp dữ liệu động sau này
+      }
+      
+      // Thiết lập lighbox cho hình ảnh
+      const galleryImages = document.querySelectorAll('.activity-gallery img');
+      galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+          // Mở lightbox khi click vào ảnh (nếu script.js đã có lightbox)
+          if (typeof openLightbox === 'function') {
+            openLightbox(this.src, this.alt);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
